@@ -75,15 +75,44 @@ bars.addEventListener('click', () => {
       
 
 // 2. Listen for the click
-submitBtn.addEventListener('click', () => {
+submitBtn.addEventListener('click', (e) => {
+
   if(serviceInput.value === "" || timeInput.value === "" || fullNameInput.value === "" || dateInput.value === "") {
     alert("Please fill in all required fields before submitting your booking.");
+  }else{
+ // 1. Store all available services in lowercase
+// Ensure 'e' or 'event' is passed into your event listener function, e.g., function(e)
 
-  }
-  if(serviceInput.value !=="Hair cut" && serviceInput.value !== "Beard trim" && serviceInput.value !== "Hair cut and Beard trim" && serviceInput.value !== "Hair color" && serviceInput.value !== "Hair treatment" && serviceInput.value !== "Hair styling" && serviceInput.value !== "Shampoo and blow dry" && serviceInput.value !== "Scalp massage" && serviceInput.value !== "Facial" && serviceInput.value !== "Manicure" && serviceInput.value !== "Pedicure") {
-    alert("Please select a valid service.\navailable services are:\n-Hair cut\n-Beard trim\n-Hair cut and Beard trim\n-Hair color\n-Hair treatment\n-Hair styling\n-Shampoo and blow dry\n-Scalp massage\n-Facial\n-Manicure\n-Pedicure");
-    
-  }
+// 1. Prevent the form from refreshing the page
+e.preventDefault(); 
+
+const availableServices = [
+  "hair cut",
+  "beard trim",
+  "hair cut and beard trim",
+  "hair color",
+  "hair treatment",
+  "hair styling",
+  "shampoo and blow dry",
+  "scalp massage",
+  "facial",
+  "manicure",
+  "pedicure"
+];
+
+// 2. Normalize user input to lowercase and trim spaces
+const userInput = serviceInput.value.toLowerCase().trim();
+
+// 3. Validate and halt execution if invalid
+if (!availableServices.includes(userInput)) {
+  alert(
+    "Please select a valid service.\nAvailable services are:\n" +
+    "- Hair cut\n- Beard trim\n- Hair cut and Beard trim\n- Hair color\n" +
+    "- Hair treatment\n- Hair styling\n- Shampoo and blow dry\n" +
+    "- Scalp massage\n- Facial\n- Manicure\n- Pedicure"
+  );
+  return; // Stops the rest of your booking script from running
+}
   else{
 
     // 3. Extract the text values inside the click event using unique variable names
@@ -118,4 +147,5 @@ The SlickCutz Team
 
     window.open(url, '_blank'); 
   }
+}
 });
