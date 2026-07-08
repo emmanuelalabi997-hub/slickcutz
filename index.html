@@ -224,10 +224,10 @@
                 <p class="text-[#dcbc0c] text-2xl">Booking</p>
                 <input type="text" class="w-full p-3 border border-gray-400 rounded-xl text-gray-400" placeholder="Full name" 
                 id="FullName" required autocomplete="on">
-                <input type="date"  class="w-full p-3 border border-gray-400 rounded-xl text-gray-400"
-                 id="Date" required autocomplete="on" placeholder="Date">
-                 <input type="time"  class="w-full p-3 border border-gray-400 rounded-xl text-gray-400"
-                 id="Time" required autocomplete="on" placeholder="Time">
+                <input type="text"  class="w-full p-3 border border-gray-400 rounded-xl text-gray-400"
+                 id="Date" required autocomplete="on" placeholder="Date" onfocus="(this.type='date')" onblur="if(!this.value) this.type='text'">
+                 <input type="text"  class="w-full p-3 border border-gray-400 rounded-xl text-gray-400"
+                 id="Time" required autocomplete="on" placeholder="Time" onfocus="(this.type='time')" onblur="if(!this.value) this.type='text'">
                  <input type="text"  class="w-full p-3 border border-gray-400 rounded-xl text-gray-400" placeholder="Service"
                  id="Service" required autocomplete="on" >
                 <button type="submit" class="submit
