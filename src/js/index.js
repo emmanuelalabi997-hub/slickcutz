@@ -78,7 +78,7 @@ bars.addEventListener('click', () => {
 submitBtn.addEventListener('click', (e) => {
 
   if(serviceInput.value === "" || timeInput.value === "" || fullNameInput.value === "" || dateInput.value === "") {
-    alert("Please fill in all required fields before submitting your booking.");
+    alert("Please fill in all fields before submitting your booking.");
   }else{
  // 1. Store all available services in lowercase
 // Ensure 'e' or 'event' is passed into your event listener function, e.g., function(e)
