@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SlickCutz</title>
+    <link rel="stylesheet" href="src/output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link rel="icon" type="image/png" href="./src/media/image/favicon.png">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./fontawesome/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <meta name="description" content="SlickCutz is a barber shop that provides high-quality haircuts and grooming services.
+     Our team of skilled barbers is dedicated to delivering the best experience for our clients.">
+     <style>
+        input[type="datetime-local"]::-webkit-calendar-picker-indicator{
+            filter: brightness(0) saturate(100%) invert(68%) sepia(4%) saturate(305%) hue-rotate(180deg) brightness(93%) contrast(87%);
+        }
+     </style>
+</head>
+<body class="bg-[#0b0b0b] font-serif scroll-smooth" id="body">
+    <header class="h-12 md:h-16">
+        <nav class="bg-[#0b0b0b] p-4 md:px-10 fixed w-full z-20 ">
+            <div class=" mx-auto flex justify-between items-center">
+                <a href="#" class="text-2xl md:text-3xl font-bold font-serif text-[#dcbc0c] tracking-wide leading-tight">SlickCutz</a>
+                <ul class="md:flex md:space-x-6 text-[#f0f0f0] cursor-pointer font-serif">
+                    <div class="md:hidden flex items-center"><i class="fa-solid fa-bars text-2xl " id="bars"></i></div>
+
+                    <div class="hidden md:flex group items-center space-x-2"><i class="fa-solid fa-house group-hover:text-[#dcbc0c]
+                        group-hover:animate-pulse transition-all duration-300 ease-in-out "></i>
+                    <li><a href="#" class=" md:block md:group-hover:text-[#dcbc0c] text-xl">Home</a></li>
+                    </div>
+                    <div class="hidden md:flex group items-center space-x-2"><i class="fa-solid fa-layer-group group-hover:text-[#dcbc0c]
+                        group-hover:animate-ping transition-all duration-300 ease-out  "></i>
+                    <li><a href="#service" class=" md:block md:group-hover:text-[#dcbc0c] text-xl">Service</a></li>
+                    </div>
+                    <div class="hidden md:flex group items-center space-x-2"><i class="fa-solid fa-circle-info group-hover:text-[#dcbc0c]
+                        group-hover:rotate-360 transition-transform duration-1000 ease-in-out  "></i>
+                    <li><a href="#about" class=" md:block md:group-hover:text-[#dcbc0c] text-xl">About</a></li>
+                    </div>
+                    <div class="hidden md:flex group items-center space-x-2"><i class="fa-solid fa-location-dot group-hover:text-[#dcbc0c]
+                        group-hover:animate-bounce transition-all duration-300 ease-out "></i>
+                    <li><a href="#footer" class=" md:block md:group-hover:text-[#dcbc0c] text-xl">Appointment</a></li>
+                    </div>
+                    <div class=" items-center text-xl w-4 justify-center hidden md:flex  ">
+                        <i class="fas fa-moon hover:text-[#dcbc0c] active:animate-ping animate-pulse moon" ></i>
+                    </div>
+                </ul>
+            </div>
+            <!-- //mobile view side bar -->
+            <div class="absolute top-20 px-4  right-0">
+            <ul class=" z-10 bg-[#0b0b0b] w-0 opacity-0 md:hidden flex-col  p-4 text-[#f0f0f0] rounded-2xl space-y-3 font-serif
+            transition-all duration-400 ease-in-out overflow-hidden" id="sidebar">
+                    <div class="flex group items-center space-x-2"><i class="fa-solid fa-house group-active:text-[#dcbc0c]
+                          "></i>
+                    <li><a href="#" class="  group-active:text-[#dcbc0c] text-xl">Home</a></li>
+                    </div>
+                    <div class="flex group items-center space-x-2"><i class="fa-solid fa-layer-group group-active:text-[#dcbc0c]
+                          "></i>
+                    <li><a href="#service" class=" block group-active:text-[#dcbc0c] text-xl">Service</a></li>
+                    </div>
+                    <div class="flex group items-center space-x-2"><i class="fa-solid fa-circle-info group-active:text-[#dcbc0c]
+                           "></i>
+                    <li><a href="#about" class=" block group-active:text-[#dcbc0c] text-xl">About</a></li>
+                    </div>
+                    <div class="flex group items-center space-x-2"><i class="fa-solid fa-location-dot group-active:text-[#dcbc0c]
+                        animate-bounce transition-all duration-300 ease-out "></i>
+                    <li><a href="#footer" class=" block group-active:text-[#dcbc0c] text-xl">Appointment</a></li>
+                    </div>
+                    <div class=" items-center text-xl w-4 justify-center ">
+                        <i class="fas fa-moon active:text-[#dcbc0c]  animate-pulse moon" ></i>
+                    </div>
+            </ul>
+            </div>
+        </nav>
+        </header>
+       <main class="relative ">
+    <!-- //main section -->
+    <section class="relative w-full h-screen flex items-center justify-center overflow-hidden bg-[#0b0b0b] top-0">
+        
+        <!-- 1. Background Image with a Dark Overlay for Text Readability -->
+        <div class="absolute inset-0 w-full h-full">
+            <img src="./src/media/image/image.webp" alt="Barbershop interior background" class="object-cover w-full h-full opacity-40">
+            <!-- Smooth luxury dark gradient overlay -->
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0b0b0b] via-transparent to-[#0b0b0b]/50"></div>
+        </div>
+
+        <!-- 2. Hero Text Contents Layered Perfectly on Top -->
+        <div class="relative z-10 max-w-3xl mx-auto flex flex-col items-center gap-6 text-center p-6 text-[#f0f0f0]">
+            <h1 class="text-4xl md:text-6xl font-serif tracking-wide leading-tight">
+                Refined Grooming For The <span class="text-[#dcbc0c]">Modern Gentleman</span>
+            </h1>
+            
+            <p class="font-sans text-sm md:text-lg text-zinc-400 max-w-xl leading-relaxed">
+                Premium barber service in an atmosphere built around sophistication and confidence.
+            </p>
+            
+            <!-- 3. Premium Interactive Button with Smooth Transitions -->
+            <div class="mt-4">
+                <a href="#footer"><button  type="button" class="bg-[#c5a059] hover:bg-[#dcbc0c] text-[#0b0b0b] font-sans font-semibold tracking-wider uppercase cursor-pointer 
+                text-xs md:text-sm px-8 py-4 rounded-sm shadow-xl transition-colors duration-300 ease-in-out active:bg-[#cebc53] active:duration-75">
+                    Reserve Appointment
+                </button></a>
+            </div>
+        </div>
+        
+    </section>
+
+    <!-- //2nd section -->
+     <section class="w-full p-10  flex flex-col gap-4 justify-around md:flex-row">
+        <aside class=" flex flex-col justify-center gap-4">
+        <h1 class="tracking-tight leading-tight text-3xl md:text-6xl text-gray-400">Refined Grooming For <span class="text-[#dcbc0c]">Modern Gentlemen</span></h1>
+        <h3 class="font-sans text-zinc-400 md:text-xl">Changing looks one strand of hair at a time.</h3>
+        <a href="#footer"><button type="button" class="bg-[#c5a059] hover:bg-[#dcbc0c] text-[#0b0b0b] font-sans font-semibold tracking-wider uppercase cursor-pointer 
+                text-xs md:text-sm px-2 py-4 w-52 rounded-sm shadow-xl transition-colors duration-300 ease-in-out active:bg-[#cebc53] active:duration-75">
+                    Reserve Appointment
+                </button></a>
+        </aside>
+        <!-- 1. Added relative so the absolute image snaps to this container, and mb-6 for safety spacing -->
+     <div class="w-full relative mb-6 flex items-center">
+         
+         <!-- The Base Image -->
+         <img src="./src/media/image/extra.webp" alt="Main gallery presentation" class="rounded-xl w-full object-cover">
+          <!-- Smooth luxury dark gradient overlay -->
+            <div class="absolute inset-0 bg-gradient-to-t  from-[#0b0b0b] via-transparent to-[#0b0b0b]/50"></div>
+         
+         <img src="./src/media/image/more.webp" alt="Secondary detail view" 
+              class="hidden lg:block rounded-xl absolute top-3 z-10 left-10 lg:w-44 xl:w-80 shadow-2xl border-4 border-[#0b0b0b]">
+              <img src="./src/media/image/new.webp" alt="Third detail view" 
+              class="hidden  rounded-xl absolute bottom-3 lg:hidden left-10 z-10 max-w-80 xl:block xl:w-96 shadow-2xl border-4 border-[#0b0b0b]">
+     </div>
+     </section>
+
+     <!-- //service section -->
+      <section class="p-10 flex flex-col md:flex-row gap-7 items-center" id="service">
+        <article class="relative flex items-center border-2 border-[#dcbc0c]">
+            <img src="./src/media/image/col1.webp" alt="" class=" object-cover">
+             <!-- Smooth luxury dark gradient overlay -->
+            <div class="absolute cursor-pointer inset-0 bg-gradient-to-t from-[#0b0b0b] via-transparent to-[#0b0b0b]/50"></div>
+            <div class=" bg-[#dcbc0c] text-[#0b0b0b] w-12 h-12 rounded-full absolute -top-6 left-1/2 -translate-x-1/2 flex items-center justify-center shadow-lg"
+            id="Arrow">
+                <i class="fas fa-chevron-down via-transparent pointer-events-none" id="chevron"></i>
+                </div>
+            <aside class="overflow-hidden h-0 opacity-0 gap-2 absolute z-10 flex flex-col font-sans bg-[#0b0b0b] bottom-0 w-full   text-center border-2 border-[#dcbc0c]
+            transition-all duration-300 ease-in-out" id="slideUp">
+                <h1 class="text-2xl text-[#f0f0f0]  md:text-3xl">Exclusive Hair Cutz</h1>
+                <h3 class="text-zinc-400 md:text-xl">Styling with purpose and inspiration</h3>
+            </aside>
+        </article>
+
+        <article class="relative border-2 border-[#dcbc0c]">
+            <img src="./src/media/image/col2.webp" alt="" class="">
+              <!-- Smooth luxury dark gradient overlay -->
+            <div class="absolute cursor-pointer inset-0 bg-gradient-to-t from-[#0b0b0b] via-transparent to-[#0b0b0b]/50"></div>
+            <div class=" bg-[#dcbc0c] text-[#0b0b0b] w-12 h-12 rounded-full absolute -top-6 left-1/2 -translate-x-1/2 flex items-center justify-center shadow-lg"
+            id="Arrow2">
+                <i class="fas fa-chevron-down via-transparent pointer-events-none" id="chevron2"></i>
+                </div>
+            <aside class="overflow-hidden h-0 opacity-0 gap-2 absolute z-10 flex flex-col font-sans bg-[#0b0b0b] bottom-0 w-full   text-center border-2 border-[#dcbc0c]
+            transition-all duration-300 ease-in-out" id="slideUp2">
+                <h1 class="text-2xl text-[#f0f0f0]  md:text-3xl">Exclusive Beard Cutz</h1>
+                <h3 class="text-zinc-400 md:text-xl">Sculpting with determination and aim.</h3>
+            </aside>
+        </article>
+
+        <article class="relative border-2 border-[#dcbc0c]">
+            <img src="./src/media/image/col3.webp" alt="" class="">
+              <!-- Smooth luxury dark gradient overlay -->
+            <div class="absolute cursor-pointer inset-0 bg-gradient-to-t from-[#0b0b0b] via-transparent to-[#0b0b0b]/50"></div>
+            <div class=" bg-[#dcbc0c] text-[#0b0b0b] w-12 h-12 rounded-full absolute -top-6 left-1/2 -translate-x-1/2 flex items-center justify-center shadow-lg"
+            id="Arrow3">
+                <i class="fas fa-chevron-down via-transparent pointer-events-none" id="chevron3"></i>
+                </div>
+            <aside class="overflow-hidden h-0 opacity-0 gap-2 absolute z-10 flex flex-col font-sans bg-[#0b0b0b] bottom-0 w-full   text-center border-2 border-[#dcbc0c]
+            transition-all duration-300 ease-in-out" id="slideUp3">
+                <h1 class="text-2xl text-[#f0f0f0]  md:text-3xl">Minor Hair Cutz</h1>
+                <h3 class="text-zinc-400 md:text-xl">Styling with precision and patience.</h3>
+            </aside>
+        </article>     
+      </section>
+
+      <!-- //about section -->
+       <section class="w-full p-10 " id="about">
+        <aside class="flex justify-evenly items-center gap-12 md:gap-20 lg:gap-32 lg:px-36 flex-col md:flex-row">
+        <div class="border-2 border-[#dcbc0c] p-1">
+        <div class="border-2 border-[#dcbc0c] p-1">
+        <article class="w-full p-4 bg-[#0b0b0b] border-2 border-[#dcbc0c]  flex flex-col items-center justify-center gap-2">
+            <i class="fas fa-scissors text-[#f0f0f0] text-2xl"></i>
+            <p class="text-[#f0f0f0] text-center font-sans text-xl">
+            Premium barber services tailored to the modern gentleman. We combine timeless 
+            tradition with modern styling techniques to deliver an unparalleled experience 
+            that walks out the door with pure confidence.
+            </p>
+        </article>
+        </div>
+        </div>
+
+        <div class="border-2 border-[#dcbc0c] p-1">
+        <div class="border-2 border-[#dcbc0c] p-1">
+        <article class="w-full p-4 bg-[#0b0b0b] border-2 border-[#dcbc0c] flex flex-col items-center justify-center gap-2">
+            <i class="fas fa-scissors text-[#f0f0f0] text-2xl"></i>
+            <p class="text-[#f0f0f0] text-center font-sans text-xl">
+            Exclusive grooming experiences crafted for the modern individual. We merge classic precision with sharp 
+            styling concepts to deliver a signature aesthetic that commands respect and inspires absolute confidence.
+            </p>
+        </article>
+        </div>
+        </div>
+        </aside>
+       </section>
+
+       <!-- //footer section -->
+        <footer class="flex flex-col justify-around w-full items-center p-10 bg-[#191919]" id="footer">      
+            <div class="relative ">
+             <a href="#" class="text-4xl md:text-6xl font-bold font-serif text-[#dcbc0c] tracking-wide leading-tight flex
+             items-center justify-center">SlickCutz </a>
+            </div>
+            <form action="" class="w-full p-3 flex flex-col items-center gap-3 md:px-32 lg:px-64 xl:px-72">
+                <p class="text-[#dcbc0c] text-2xl">Booking</p>
+                <input type="text" class="w-full p-3 border border-gray-400 rounded-xl text-gray-400" placeholder="Full name" 
+                id="FullName" required autocomplete="on">
+                <input type="datetime-local"  class="w-full p-3 border border-gray-400 rounded-xl text-gray-400"
+                 id="Date" required autocomplete="on">
+                <button type="submit" class="submit
+                bg-[#c5a059] hover:bg-[#dcbc0c] text-[#0b0b0b] font-sans font-semibold tracking-wider uppercase cursor-pointer 
+                text-xs md:text-sm px-2 py-4 w-52 rounded-sm shadow-xl transition-colors duration-300 ease-in-out active:bg-[#cebc53] active:duration-75"
+                id="Submit">
+                    Submit
+                </button>
+            </form>
+        </footer>
+
+        <!-- //authority section -->
+         <section class="py-10 px-3 text-gray-400 w-full flex items-center justify-between">
+            <div class="w-full  flex items-center justify-start text-center">
+             <p class="md:text-[15px] text-[10px]">© 2026 SlickCutz Shop. ALL RIGHTS RESERVED.</p>
+            </div>
+            <div class="w-full flex items-center justify-center text-center">
+          <p class="md:text-[15px] text-[10px] opacity-70">
+            AUTHENTIC HAIR CUTZ CURATED SECURELY
+            </p>
+            </div>
+            <div class="w-full flex items-center justify-end text-center">
+             <p class="md:text-[15px] text-[10px] opacity-70">
+              slickcutz@gmail.com
+            </p>
+            </div>
+         </section>
+
+
+</main>
+       
+
+        <script src="./src/js/index.js"></script>
+</body>
+</html>
