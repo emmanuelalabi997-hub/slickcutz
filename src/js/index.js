@@ -7,6 +7,11 @@ const Arrow = document.getElementById('Arrow');
 const Chevron = document.getElementById('chevron');
 const line = document.querySelectorAll('.line');
 const footer = document.getElementById('footer');
+const fullNameInput = document.getElementById('FullName');
+const dateInput = document.getElementById('Date');
+const timeInput = document.getElementById('Time');
+const serviceInput = document.getElementById('Service'); 
+const submitBtn = document.getElementById('Submit'); 
 
 
 const SlideUp2 = document.getElementById('slideUp2');
@@ -67,21 +72,50 @@ bars.addEventListener('click', () => {
       Chevron3.classList.toggle('fa-chevron-down');
       });
 
-      // 1. Find the HTML elements first (DO THIS OUTSIDE THE CLICK EVENT)
-const fullNameInput = document.getElementById('FullName');
-const dateInput = document.getElementById('Date');
-const submitBtn = document.getElementById('Submit'); 
+      
 
 // 2. Listen for the click
 submitBtn.addEventListener('click', () => {
+  if(serviceInput.value === "" || timeInput.value === "" || fullNameInput.value === "" || dateInput.value === "") {
+    alert("Please fill in all required fields before submitting your booking.");
+
+  }
+  if(serviceInput.value !=="Hair cut" && serviceInput.value !== "Beard trim" && serviceInput.value !== "Hair cut and Beard trim" && serviceInput.value !== "Hair color" && serviceInput.value !== "Hair treatment" && serviceInput.value !== "Hair styling" && serviceInput.value !== "Shampoo and blow dry" && serviceInput.value !== "Scalp massage" && serviceInput.value !== "Facial" && serviceInput.value !== "Manicure" && serviceInput.value !== "Pedicure") {
+    alert("Please select a valid service.\navailable services are:\n-Hair cut\n-Beard trim\n-Hair cut and Beard trim\n-Hair color\n-Hair treatment\n-Hair styling\n-Shampoo and blow dry\n-Scalp massage\n-Facial\n-Manicure\n-Pedicure");
     
+  }
+  else{
+
     // 3. Extract the text values inside the click event using unique variable names
     const customerName = fullNameInput.value;
     const bookingDate = dateInput.value;
+    const bookingTime = timeInput.value;
+    const serviceName = serviceInput.value;
 
     // 4. Construct and send your message safely
-    const message = `Name: ${customerName}\nDate: ${bookingDate}`;
+    const message = `
+ **SLICKCUTZ BOOKING CONFIRMATION** 
+
+Hello ${customerName},
+
+Thank you for choosing SlickCutz! Your appointment has been successfully scheduled. Here are your booking details:
+
+------------------------------------------
+ **Customer Name:** ${customerName}
+ **Date:** ${bookingDate}
+ **Time:** ${bookingTime}
+ **Service:** ${serviceName}
+------------------------------------------
+
+If you need to reschedule or cancel your appointment, please contact us at least 2 hours in advance. 
+
+We look forward to giving you a slick cut!
+
+Best regards,
+The SlickCutz Team
+`;
     const url = `https://wa.me/2349134729702?text=${encodeURIComponent(message)}`;
 
     window.open(url, '_blank'); 
+  }
 });
